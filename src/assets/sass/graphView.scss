@@ -1,0 +1,18 @@
+.graph-detail-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .graph-detail {
+    width: 60%;
+  }
+  
+  .total-amount {
+    width: 30%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    text-align: right;
+  }
+  

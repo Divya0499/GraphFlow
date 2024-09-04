@@ -1,0 +1,86 @@
+/* GraphForm.module.scss */
+
+.graph-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  
+    .form-row, .date-row, .price-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+  
+      & > * {
+        margin-right: 0.5rem;
+      }
+  
+      button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+  
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  
+    .error {
+      color: #e74c3c;
+      font-size: 0.875rem;
+    }
+  
+    .field-container {
+      margin-bottom: 1rem;
+  
+      input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        width: 100%;
+      }
+  
+      input[type="date"] {
+        padding: 0.375rem 0.5rem;
+      }
+  
+      input[type="number"] {
+        padding: 0.375rem 0.5rem;
+      }
+    }
+  }
+  
+  .submit-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  
+    &:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  }
+  
+  .add-button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  
