@@ -1,18 +1,38 @@
-.graph-detail-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+.graph-view-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.graph-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  h2 {
+    margin-top: 0;
+    color: #343a40;
   }
   
-  .graph-detail {
-    width: 60%;
+  p {
+    margin: 5px 0;
+    color: #495057;
+    font-size: 16px;
   }
-  
-  .total-amount {
-    width: 30%;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    text-align: right;
-  }
-  
+}
+
+.total-amount {
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #212529;
+}

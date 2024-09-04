@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom";
 
-const GraphView = ({ graphs }) => {
-  console.log('graphs', graphs)
-  const { id } = useParams(); // Get the graph ID from the URL
-  const graph = graphs.find((g) => g.id === id);
-
+const GraphView = ({ graph }) => {
+  console.log('graph', graph);
   if (!graph) {
-    return <div>Graph not found! Please check the ID or add graphs to the list.</div>;
+    return <div className="graph-view-container">Graph not found! Please check the ID or add graphs to the list.</div>;
   }
 
-  const totalAmount = graph.prices.reduce((acc, price) => acc + price, 0);
+  // Derive dates and prices from the graph dataPoints
+  const dates = graph.dataPoints.map(dp => dp.date);
+  const prices = graph.dataPoints.map(dp => dp.price);
+
+  // Calculate total amount
+  const totalAmount = prices.reduce((acc, price) => acc + price, 0);
 
   return (
     <div className="graph-view-container">
@@ -17,16 +18,11 @@ const GraphView = ({ graphs }) => {
         <h2>Graph Details</h2>
         <p><strong>Type:</strong> {graph.type}</p>
         <p><strong>Description:</strong> {graph.description}</p>
-        {graph.dates.map((date, index) => (
-          <div key={index}>
-            <p><strong>Date:</strong> {date}</p>
-            <p><strong>Price:</strong> {graph.prices[index]}</p>
-          </div>
-        ))}
+        <p><strong>Dates:</strong> {dates.join(", ")}</p>
+        <p><strong>Prices:</strong> {prices.join(", ")}</p>
       </div>
       <div className="total-amount">
-        <h3>Total Amount</h3>
-        <p>{totalAmount}</p>
+        <p><strong>Total Amount:</strong> ${totalAmount.toFixed(2)}</p>
       </div>
     </div>
   );

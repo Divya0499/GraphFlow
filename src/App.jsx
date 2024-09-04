@@ -1,15 +1,17 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import GraphForm from './components/GraphForm';
-import Login from './components/Login';
-import './App.scss';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+import "./App.scss";
+import ProtectedRoutes from "./components/ProtectedRoute";
 
 const App = () => {
-
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/graphs" element={<GraphForm/> } />
+        <Route path="/*" element={<ProtectedRoutes />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,10 @@
 import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 const Login = () => {
+  const navigate=useNavigate()
+
   // Formik hook for managing form state and validation
   const formik = useFormik({
     initialValues: {
@@ -18,10 +21,10 @@ const Login = () => {
     }),
     onSubmit: () => {
       alert('Login Successful!');
-      // Handle successful login here
+      localStorage.setItem("auth","token")
+      navigate("/graphs")
     },
   });
-
   return (
     <div className="login-container">
       <h2>Login</h2>
